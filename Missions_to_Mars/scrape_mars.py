@@ -99,6 +99,8 @@ def scrape_info():
 
     mars["Hemisphere_Image_URLS"] = hemisphere_image_urls
 
+    browser.quit()
+
     return mars
 
 if __name__ == "__main__":
