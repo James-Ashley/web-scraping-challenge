@@ -59,13 +59,9 @@ def scrape_info():
 
     m_clean.columns = ["Description" , "Values"]
 
-    m_clean
-
-    html_table = m_clean.to_html()
+    html_table = m_clean.to_html(index=False)
 
     html_table = html_table.replace('\n', '')
-
-    html_table
 
     mars["Facts"] = html_table
 

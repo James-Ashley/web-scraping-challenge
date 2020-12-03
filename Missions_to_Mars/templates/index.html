@@ -17,11 +17,24 @@
     </div>
   
   <div class="row">
-    <img class="img-responsive" img src="{{featured_img}}">
+    <div class = "col-6">
     <h2><strong>Latest Mars News</strong></h2>
-    <h3>{{mars.News_Title}}</h3>
-    <h3>{{mars.News_Para}}</h3>
+    <h3><strong> {{mars.News_Title}}</strong></h3>
+    <h4><small>{{mars.News_Para}}</small> </h3>
+    </div>
   </div>
+
+  <div class="col-6">
+     <h2><strong>Featured Mars Image</strong></h2> 
+     <p><img src = '{{mars.featured_img}}' style = "float:right, width:400px;height:400px;"/>{{mars.Facts|safe}}</p>
+  </div>
+ 
+
+    
+
+  
+  </div>
+
   </div>
   </div>
 </body>
