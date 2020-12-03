@@ -5,13 +5,17 @@ import time
 from bs4 import BeautifulSoup
 from splinter import Browser
 
+executable_path = {"executable_path": "chromedriver"}
+
 def scrape_info():
 
-    browser = Browser('chrome')
+    browser = Browser('chrome', **executable_path, headless=True)
 
     url = 'https://mars.nasa.gov/news/'
 
     browser.visit(url)
+
+    time.sleep(2)
 
     soup = BeautifulSoup(browser.html,'html.parser')
 
@@ -23,9 +27,6 @@ def scrape_info():
         'News_Title' : results,
         'News_Para' : n_para,
     }
-
-    mars
-
 
     url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
 
@@ -98,8 +99,6 @@ def scrape_info():
     hemisphere_image_urls
 
     mars["Hemisphere_Image_URLS"] = hemisphere_image_urls
-
-    browser.quit()
 
     return mars
 
